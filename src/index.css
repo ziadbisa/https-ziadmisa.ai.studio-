@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    background-color: #EAE5DC;
+    color: #111111;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #EAE5DC;
+    color: #111111;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #111111;
+    color: #FACC15;
+  }
+}
+
+.pixel-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.placeholder-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.brutalist-card {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutalist-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutalist-card:active {
+  transform: translate(0px, 0px);
+  box-shadow: 2px 2px 0px #111111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brutalist-card,
+  .brutalist-card:hover,
+  .brutalist-card:active {
+    transition: none;
+    transform: none;
+  }
+}
